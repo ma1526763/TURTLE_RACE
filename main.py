@@ -24,6 +24,10 @@ for i in range(len(turtle_objects_list)):
     turtle_objects_list[i].goto(x, y)
     y += 100
 
-winner = start_race()
-print(f"Your bet {winner} turtle is the winner!!" if winner == user_bet else f"You lost {winner} turtle is the winner!!")
+winner = start_race().title()
+turtle_write = Turtle()
+turtle_write.penup()
+turtle_write.hideturtle()
+turtle_write.color(winner)
+turtle_write.write(f"Congratulations!! {winner} turtle wins the race.", align="center", font=('Arial', 24, "normal")) if winner == user_bet else turtle_write.write(f"Oh!! {winner} turtle wins the race.", align="center", font=('Arial', 24, "normal"))
 screen.exitonclick()
